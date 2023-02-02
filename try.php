@@ -64,7 +64,7 @@ div.end{
           </td>
   
           <td>Oxgyn Saturation</td>
-          <td> <input type="text" name="Oxygen_saturation'" id="Oxygen_saturation'"> %
+          <td> <input type="text" name="Oxygen_saturation" id="Oxygen_saturation"> %
         </td>
         </tr>
         <tr>
@@ -94,7 +94,7 @@ div.end{
           <td><img src="https://www.svgrepo.com/show/190835/pressure-meter.svg" height="100" width="100"></td>
   
           <td>Blood Pressure</td>
-          <td><input type="text" name="Pressure'" id="Pressure'"> mm Hg
+          <td><input type="text" name="Pressure" id="Pressure"> mm Hg
           </td>
         </tr>
         
