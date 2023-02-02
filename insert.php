@@ -24,28 +24,37 @@
     echo "Connected successfully";
 		
 		// Taking all 5 values from the form data(input)
-		$Respiration = $_POST['Respiration'];
-		$Temperature = $_POST['Temperature'];
-		$Oxygen_saturation = $_POST['Oxygen_saturation'];
-		$Heart_beat = $_POST['Heart_beat'];
-		$Pressure = $_POST['Pressure'];
+		$Respiration = $_REQUEST['Respiration'];
+		$Temperature = $_REQUEST['Temperature'];
+		$Oxygen_saturation = $_REQUEST['Oxygen_saturation'];
+		$Heart_beat = $_REQUEST['Heart_beat'];
+		$Pressure = $_REQUEST['Pressure'];
+		$latitude = $_REQUEST['latitude'];
+		$longitude = $_REQUEST['longitude'];
 		
 		// Performing insert query execution
 		// here our table name is college
 		$sql = "INSERT INTO patients (Pressure,Oxygen_saturation,Temperature,Heart_beat,Respiration) VALUES ('$Pressure','$Oxygen_saturation','$Temperature','$Heart_beat','$Respiration')";
-		
+		$sql2="UPDATE ambulances SET Ambulance_latitude = $latitude, Ambulance_longitude = $longitude WHERE id_ambulance = '003'";
 		if(mysqli_query($conn, $sql)){
-			echo "<h3>data stored in a database successfully."
+			echo "<h3> {Vital data stored in a database successfully."
 				. " Please browse the admin"
 				. " to view the updated data</h3>";
 
-			echo nl2br("\n$Respiration\n $Temperature\n "
-				. "$Oxygen_saturation\n $Heart_beat\n $Pressure");
 		} else{
 			echo "ERROR: Hush! Sorry $sql. "
 				. mysqli_error($conn);
 		}
-		
+
+		if(mysqli_query($conn, $sql2)){
+			echo "<h3> {Location data stored in a database successfully."
+				. " Please browse the admin"
+				. " to view the updated data</h3>";
+
+		} else{
+			echo "ERROR: Hush! Sorry $sql2. "
+				. mysqli_error($conn);
+		}
 		// Close connection
 		mysqli_close($conn);
 		?>
