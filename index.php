@@ -2,9 +2,9 @@
 <?php 
 // conection Info
 $servername = "rm-l4v670ce623mi4fxv.mysql.me-central-1.rds.aliyuncs.com";
-$username = "username";
-$password = "password";
-$DBName = "dbname";
+$username = "amb";
+$password = "No123456";
+$DBName = "demodb";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $DBName);
 
@@ -12,14 +12,14 @@ $conn = new mysqli($servername, $username, $password, $DBName);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-//echo "Connected successfully";
+echo "Connected successfully";
 $query = "select * from patients";
 $result = mysqli_query($conn,$query);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>ADVANCULANCE System</title>
+<title>ADVANCULANCE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -56,7 +56,7 @@ div.end{
 <!-- Top container -->
 <div class="container">
   <div>
-  <img src="https://db-measuers.oss-me-central-1.aliyuncs.com/logo/logo2.png" height="100px" width="250px" style="margin-left:120px;">
+  <img src="https://db-measuers.oss-me-central-1.aliyuncs.com/logo/ADVANCULANCE.svg" height="200px" width="600px" style="margin-left:300px;">
 
   </div>
 </div>
@@ -174,7 +174,6 @@ div.end{
     </table><br>
     <a href="try.php">Try Here</a>
   </div>
-  
   <hr>
   
   <hr>
